@@ -4,7 +4,16 @@ body{
 nav{
     width: 100%;
     height: 60px;
-        background: #344051;
+    background: #344051;
+    position: fixed;
+}
+@keyframes comming{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 .logo{
     color: #fff;
@@ -12,6 +21,19 @@ nav{
     line-height: 60px;
     padding-left: 250px;
     float: left;
+    -webkit-animation: comming 2s ease;
+    -o-animation: comming 2s ease;
+    animation: comming 2s ease;
+}
+@keyframes topshift{
+    from{
+        opacity: 0;
+        margin-top: -80px;
+    }
+    to{
+        opacity: 1;
+        margin-top: 0px;
+    }
 }
 .menu{
     float: left;
@@ -24,10 +46,70 @@ nav{
     margin-right: 30px;
     font-size: 16px;
     text-transform: uppercase;
+    -webkit-animation: topshift 0.4s ease forwards;
+    -o-animation: topshift 0.4s ease forwards;
+    animation: topshift 0.4s ease forwards;
+    opacity: 0;
+}
+.menu li a{
+    transition: all 0.5s;
+    color: white;
+    transform: scale(1);
+    display: inline-block;
+}
+.menu li a:visited{
+    color: white;
+}
+.menu li a:hover{
+    color: orange;
+    
+}
+.menu li a:active{
+    transform: scale(1.1);
+}
+.menu li:nth-child(2){
+    animation-delay: 0.4s;
+}
+.menu li:nth-child(3){
+    animation-delay: 0.8s;
+}
+.menu li:nth-child(4){
+    animation-delay: 1.2s;
+}
+.menu li:nth-child(5){
+    animation-delay: 1.6s;
+}
+.menu li:nth-child(6){
+    animation-delay: 2s;
+}
+@keyframes tittlemove{
+    from{
+        opacity: 0;
+        margin-left: -500px;
+    }
+    to{
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+.tittle__container input{
+    transition: all 0.2s;
+    transform: scale(1.0);
+}
+.tittle__container input:hover{
+    background: #344051;
+    color: white;
+}
+.tittle__container input:active{
+    transform: scale(1.1);
+}
+main {
+    width: 100%;
+    height: 100%;
 }
 .main{
     width: 100%;
-    height: calc(100% - 60px);
+    height: 100%;
     background: url(../img/boy.png) 90% 100%/auto 85% no-repeat , url(../img/bg.png) center/cover no-repeat;
 }
 .tittle__container{
@@ -35,6 +117,13 @@ nav{
     margin: 432px 0px 0px 404px;
     color: #2c384a;
     text-align: center;
+    opacity: 0;
+    -webkit-animation: tittlemove 1s ease forwards;
+    -o-animation: tittlemove 1s ease forwards;
+    animation: tittlemove 1s ease forwards;
+    -webkit-animation-delay: 2s;
+    -o-animation-delay: 2s;
+    animation-delay: 2s;
 }
 .tittle__container h1{
     font-size: 40px;
@@ -85,6 +174,17 @@ nav{
     font-size: 13px;
     padding: 0px 13px;
     margin: 0px 57% 100px 43%;
+}
+.info input{
+     transition: all 0.2s;
+    transform: scale(1.0);
+}
+.info input:hover{
+    background: #344051;
+    color: white;
+}
+.info input:active{
+    transform: scale(1.1);
 }
 .naviki h2{
     text-align: center;
@@ -174,8 +274,14 @@ nav{
     font-family: serif;
     margin-left: 300px;
 }
+
 .statics {
-    background: url(../img/bg3.png) 90% 100%/auto 85% no-repeat;
+    background: url(../img/bg3.png)  100% 100%/auto 85% repeat;
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .statics h2{
     text-align: center;
